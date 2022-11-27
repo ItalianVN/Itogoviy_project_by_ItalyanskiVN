@@ -1,6 +1,6 @@
-﻿// Формирование новых массивов (входного и выходного)
+﻿// Формирование нового массива
 string[] array1 = new string[5] {"12", "123", "helloWorld", "1234", "end"};
-string[] array2 = new string[array1.Length];
+
 
 // Метод вывода массива на экран
 void PrintArray(string[] array)
@@ -13,8 +13,9 @@ void PrintArray(string[] array)
 }
 
 // Метод выделения из массива строк, строки с размерностью менее 3х
-void NewArray(string[] array1, string[] array2)
+string [] NewArray(string[] array1)
 {
+    string[] array2 = new string[array1.Length];
     int count = 0;
     for (int i = 0; i < array1.Length; i++)
     {
@@ -24,4 +25,8 @@ void NewArray(string[] array1, string[] array2)
         count++;
         }
     }
+    return array2;
 }
+
+string[] array2 = NewArray(array1);
+PrintArray(array2);
